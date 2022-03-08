@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+    <link href="extension/header.css" rel="stylesheet" type="text/css" />
+    <link href="extension/all.css" rel="stylesheet" type="text/css" />
+    <script src="extension/all.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <style>
+    .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color:White;
+  
+}
+</style>
+    
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+        <img src="img/r.png" height="50%" width="50%"/>
+        </a>
+          
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" BackColor="#F7F6F3" 
+                     DynamicHorizontalOffset="2" Font-Names="Times New Roman" Font-Size="18px" 
+                     ForeColor="#CC0000" StaticSubMenuIndent="10px" Font-Bold="True">
+                <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#F7F6F3" />
+                <DynamicSelectedStyle BackColor="#5D7B9D" />
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/master.aspx" Text="HOME" Value="HOME">
+                    </asp:MenuItem>
+                    <asp:MenuItem Selectable="False" Text="VIEW" Value="VIEW">
+                        <asp:MenuItem Text="PUCHASED" Value="PUCHASED"></asp:MenuItem>
+                        <asp:MenuItem Text="ISSUEDED" Value="ISSUEDED"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="ADD" Value="ADD" Selectable="False">
+                        <asp:MenuItem NavigateUrl="~/item.aspx" Text="ITEM" Value="ITEM"></asp:MenuItem>
+                        <asp:MenuItem Text="ISSUER" Value="ISSUER" NavigateUrl="~/addissuer.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="DEALER" Value="DEALER" NavigateUrl="~/adddealer.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="ISSUED-TO" Value="ISSUED-TO" NavigateUrl="~/issuedto.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="PURCHASE" Value="PURCHASE" NavigateUrl="~/purchase.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="STOCK" Value="STOCK" NavigateUrl="~/stock.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="REPORT" Value="REPORT" NavigateUrl="~/Report.aspx">
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/index.aspx" Target="_TOP" Text="LOG-OUT" 
+                        Value="LOG-OUT"></asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#5D7B9D" />
+        </asp:Menu>
+                
+         
+</nav>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    
+    <footer class="footer">
+  <!--Social buttons-->
+  <div class="text-center label-default" >
+    <h5 style="color:black; margin:0">You can find us at</h5>
+    <ul class="list-inline" style="margin:0;">
+      <li class="list-inline-item">
+        <a href="https://www.facebook.com"  title="Facebook" target="main.aspx">
+          <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://in.linkedin.com/" title="Linkedin" target="main.aspx">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://twitter.com/i/flow/login" title="Twitter" target="main.aspx">
+          <i class="fab fa-twitter-square fa-2x"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.youtube.com/?gl=IN" title="Youtube" target="main.aspx">
+          <i class="fab fa-youtube-square fa-2x"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--/.Social buttons-->
+ 
+  <!--Copyright-->
+  <div class=" text-center text-muted bg-warning">
+    Copyright
+     <a href="#">Inventory Management </a> | It is free for use
+  </div>
+  <!--/.Copyright-->
+</footer>
+ 
+    </form>
+</body>
+</html>
